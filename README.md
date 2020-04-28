@@ -14,7 +14,7 @@ The value is noisy and no-stability, it may include issues.
     * Heart Rate (HR): 40-250
     * SpO2: 70-100
 * After getting the valid 30 measurement, it analyzes data. 
-![preview](https://media.githubusercontent.com/media/shohara/M5StickC_SpO2/images/images/SpO2.jpg)
+* <img src="https://media.githubusercontent.com/media/shohara/M5StickC_SpO2/images/images/SpO2.jpg" width="400">
 
 # Build
 * Include MAX30100lib library before compiling ino file on Arduino IDE.
