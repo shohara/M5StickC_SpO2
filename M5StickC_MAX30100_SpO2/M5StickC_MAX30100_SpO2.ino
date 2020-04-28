@@ -198,6 +198,10 @@ void loop()
 
     // Asynchronously dump heart rate and oxidation levels to the serial
     // For both, a value of 0 means "invalid"
+    uint8_t tmp_counter = t_counter;
+    if(buffer_filled){
+      tmp_counter = Duration;
+    }
     if (millis() - tsLastReport > SamplingPeriodMS) {
       if(buffer_filled && refineData() ){
         // 測定終了 結果表示
@@ -271,7 +275,7 @@ void loop()
           M5.Lcd.printf("HR: %.01f bpm", tmp_heartRate);
         }
         // プログレスバー
-        M5.Lcd.fillRect(0, LCD_HEIGHT-10, t_counter*LCD_WIDTH*0.8/Duration, 10, GREEN);
+        M5.Lcd.fillRect(0, LCD_HEIGHT-10, tmp_counter*LCD_WIDTH*0.8/Duration, 10, GREEN);
       }
       tsLastReport = millis();
     }
